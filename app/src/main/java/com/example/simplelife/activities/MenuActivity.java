@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.simplelife.fragments.AskFragment;
 import com.example.simplelife.fragments.CountDownFragment;
@@ -22,6 +23,7 @@ import com.example.simplelife.fragments.TodoListFragment;
 public class MenuActivity extends AppCompatActivity {
 
     ImageButton btnAsk, btnCountDown, btnNote, btnPlan, btnSetting, btnTodoList;
+    ImageView btnLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class MenuActivity extends AppCompatActivity {
         btnPlan = (ImageButton) findViewById(R.id.calender_button);
         btnSetting = (ImageButton) findViewById(R.id.setting_button);
         btnTodoList = (ImageButton) findViewById(R.id.todo_button);
+        btnLogo = (ImageView) findViewById(R.id.logo);
 
         btnAsk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +105,14 @@ public class MenuActivity extends AppCompatActivity {
                 fm.beginTransaction()
                         .replace(R.id.container_fragment, fragment)
                         .commit();
+            }
+        });
+
+        btnLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MenuActivity.this, MainActivity.class);
+                startActivity(myIntent);
             }
         });
 

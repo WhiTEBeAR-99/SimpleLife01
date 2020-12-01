@@ -67,7 +67,6 @@ public class GridAdapterPlan extends ArrayAdapter {
         int currentYear = currentDate.get(Calendar.YEAR);//lay nam hien tai
 
         //Gan thoi gian cho TextView
-
         View view = convertView;
 
         if(view == null){
@@ -89,6 +88,9 @@ public class GridAdapterPlan extends ArrayAdapter {
         Calendar eventCalendar = Calendar.getInstance();
         ArrayList<String> arrayList = new ArrayList<>();
 
+        Log.d("Day Number", ""+Day_Number);
+        Log.d("Event Number", ""+EventNumber);
+
         for(int i = 0; i < events.size(); i++){
             eventCalendar.setTime(ConvertStringToDate(events.get(i).getDATE()));
 
@@ -99,6 +101,7 @@ public class GridAdapterPlan extends ArrayAdapter {
                 arrayList.add(events.get(i).getEVENT());
                 //show ra só lượng plan có trong ngày
                 EventNumber.setText(arrayList.size()+" SK");
+                EventNumber.setBackgroundColor(getContext().getResources().getColor(R.color.reds));
 
             }
         }

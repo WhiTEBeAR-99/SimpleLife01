@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="redenough">#FF573B</color>
+    <color name="reds">#FF5576</color>
     <color name="green">@android:color/holo_green_dark</color>
     <color name="nadeshiko">#DC9FB4</color>
     <color name="suoh">#8E354A</color>

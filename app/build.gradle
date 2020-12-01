@@ -67,4 +67,7 @@ dependencies {
 
     // Getting started with Material Components
     implementation 'com.google.android.material:material:1.1.0-alpha05'
+
+    //Hieu ung annimation
+    implementation 'com.airbnb.android:lottie:3.5.0'
 }
