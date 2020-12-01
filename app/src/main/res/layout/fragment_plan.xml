@@ -52,9 +52,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/amita"
-        android:text="Chọn Ngày"
         android:textColor="@color/white"
-        android:textSize="@dimen/_20ssp"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="italic"
         tools:ignore="MissingConstraints"
         android:layout_marginBottom="@dimen/_12sdp"
         app:layout_constraintTop_toBottomOf="@+id/plan_tv"
@@ -78,6 +78,7 @@
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:src="@drawable/b_back_32"
+            android:background="@color/darkenough"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout"
             tools:ignore="MissingConstraints"
             />
@@ -103,6 +104,7 @@
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:src="@drawable/b_small_next_32"
+            android:background="@color/darkenough"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout"
             tools:ignore="MissingConstraints"
             />

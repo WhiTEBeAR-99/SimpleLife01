@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/llo_time_event"
         />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/addevent"
@@ -111,8 +111,27 @@
         android:textColor="@color/white"
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
+        android:background="@color/darkenough"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
+
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/addevent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/edt_bring_event"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        android:text="Thêm Kế Hoạch"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:fontFamily="@font/amita"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="@dimen/_20ssp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:background="@color/darkenough"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

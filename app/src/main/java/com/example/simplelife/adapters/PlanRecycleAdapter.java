@@ -117,8 +117,8 @@ public class PlanRecycleAdapter extends RecyclerView.Adapter<PlanRecycleAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView DateText, Event, Place, Bring, Time;
-        Button delete;
+        TextView DateText, Event, Place, Bring, Time, delete;
+//        Button delete;
         ImageButton setAlarm;
 
         public MyViewHolder(@NonNull View itemView) {

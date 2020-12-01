@@ -54,7 +54,7 @@ import java.util.TimeZone;
  * Use the {@link PlanFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PlanFragment extends Fragment {
+public class                PlanFragment extends Fragment {
 
     private static final String TAG = "PlanFragment";
     private TextView txtDate;
@@ -77,6 +77,10 @@ public class PlanFragment extends Fragment {
     SimpleDateFormat monthFormat = new SimpleDateFormat("MMMM", Locale.ENGLISH);
     SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy", Locale.ENGLISH);
     SimpleDateFormat eventDateFormate = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+
+    Calendar currentTime;
+    SimpleDateFormat simpleDateFormat;
+    String Date;
 
 
     GridAdapterPlan gridAdapterPlan;
@@ -115,6 +119,18 @@ public class PlanFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_plan, container, false);
 
+        //TODO: Xu ly get DateTime
+        txtDate = v.findViewById(R.id.calender_tv);
+        //Lay thoi gian he thong
+        currentTime = Calendar.getInstance();
+        //Doi dinh dang thoi gian
+        simpleDateFormat = new SimpleDateFormat("EEEE, dd-MMMM-yyyy", Locale.getDefault());
+        Date = simpleDateFormat.format(currentTime.getTime());
+        //Gan thoi gian cho TextView
+        txtDate.setText(Date);
+
+
+
         // TODO: hiện ngày tháng năm
         txtDate = v.findViewById(R.id.calender_tv);
         txtDate.setOnClickListener(new View.OnClickListener() {
@@ -131,6 +147,7 @@ public class PlanFragment extends Fragment {
                 dialog.show();
             }
         });
+
 
         //TODO: Chọn và lấy ngày, tháng, năm
         mDataSetListener = new DatePickerDialog.OnDateSetListener() {
@@ -184,7 +201,7 @@ public class PlanFragment extends Fragment {
                 TextView eventTime = addView.findViewById(R.id.eventtime);
                 ImageButton setTime = addView.findViewById(R.id.seteventtime);
                 EditText eventBring = addView.findViewById(R.id.edt_bring_event);
-                Button addEventPlan = addView.findViewById(R.id.addevent);
+                TextView addEventPlan = addView.findViewById(R.id.addevent);
 
                 // lấy biến giá trị của checkbox alarm nhắc nhở
                 CheckBox alarmMe = addView.findViewById(R.id.alarme);
@@ -360,7 +377,7 @@ public class PlanFragment extends Fragment {
         SQLiteDatabase database = plandbOpenHelper.getWritableDatabase();
         plandbOpenHelper.SaveEvent(event,place,time,date,month,year,bring,notify,database);
 //        plandbOpenHelper.close();
-        Toast.makeText(getActivity(), "Event Plan Save", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Đã Lưu", Toast.LENGTH_SHORT).show();
     }
 
     // TODO: Hàm load lại lịch sau khi tăng, giảm tháng
@@ -409,5 +426,18 @@ public class PlanFragment extends Fragment {
         cursor.close();
         plandbOpenHelper.close();
     }
+
+//    //TODO: Get date_time sytem
+//    private void getDateTimeSytem() {
+//        Calendar cal = Calendar.getInstance();
+//        int year = cal.get(Calendar.YEAR);
+//        int month = cal.get(Calendar.MONTH);
+//        int day = cal.get(Calendar.DAY_OF_MONTH);
+//
+//        DatePickerDialog dialog = new DatePickerDialog(getActivity(), android.R.style.Theme_Holo_Dialog_MinWidth, mDataSetListener, year, month, day);
+//
+//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//        dialog.show();
+//    }
 
 }
